@@ -1,0 +1,18 @@
+{% macro active(activePage='home') %}
+	<nav class="navbar level" role="navigation" aria-label="main navigation">
+	    <ul class=" navbar-menu is-active level-item has-text-centered">
+	    	{# <li class="navbar-brand">Adrienne Debigare</li> #}
+	    	<li class="navbar-brand"><img src="img/logo.svg" alt=""></li>
+	    	  <!-- Macro stuff here -->
+    	    <li>
+    	    	<a href="#" class="navbar-item navbar-start {%if activePage == 'Portfolio' %} active {% endif %}">Portfolio</a>	
+    	    </li>
+    	    <li>
+    	    	<a class="navbar-item {%if activePage == 'about' %} active {% endif %}" href="/about.html">About</a>
+    	    </li>
+    		<li>
+    			<a class="navbar-item navbar-end {%if activePage == 'Case-Studies' %} active {% endif %}" href="#">Case Studies</a>
+    		</li>
+	    </ul>
+	</nav>
+{% endmacro %}

@@ -1,0 +1,29 @@
+{
+  "name": "personal-site",
+  "version": "1.0.0",
+  "description": "my site bitches! ",
+  "main": "index.html",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {
+    "bulma": "^0.5.3",
+    "concat": "^1.0.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-nunjucks-render": "^2.2.1",
+    "gulp-uglify": "^3.0.0",
+    "nunjucks": "^3.0.1",
+    "uglify": "^0.1.5"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
