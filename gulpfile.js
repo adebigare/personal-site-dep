@@ -5,6 +5,7 @@ var uglify = require('gulp-uglify');
 var minifycss = require('gulp-minify-css');
 var concat = require('gulp-concat');
 var nunjucksRender = require('gulp-nunjucks-render');
+var data = require('gulp-data');
 
 gulp.task('sass', function() {
   return gulp.src('app/scss/**/*.scss') // Gets all files ending with .scss in app/scss
@@ -17,8 +18,19 @@ gulp.task('sass', function() {
     }))
 });
 
+gulp.task('js', function() {
+  return gulp.src('app/js/**/*.js') // Gets all files ending with .scss in app/scss
+    .pipe(gulp.dest('dist/js'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+});
+
 gulp.task('nunjucks', function(){
   return gulp.src('app/pages/**/*.+(html|nunjucks)')
+    .pipe(data(function() {
+      return require('./app/data.json')
+    }))
     .pipe(nunjucksRender({
         path: ['app/templates']
       }))
@@ -36,13 +48,14 @@ gulp.task('browserSync', function() {
   })
 })
 
-gulp.task('build', ['browserSync','sass', 'nunjucks'])
+gulp.task('build', ['browserSync','sass', 'nunjucks', 'js'])
 
 // ***************************************
 
-gulp.task('watch', ['browserSync', 'nunjucks', 'sass'], function (){
+gulp.task('watch', ['browserSync', 'nunjucks', 'sass', 'js'], function (){
   gulp.watch('app/**/*.+(html|nunjucks)', ['nunjucks']); 
   gulp.watch('app/scss/**/*.scss ', ['sass']); 
+  gulp.watch('app/js/**/*.js ', ['js']); 
   // gulp.watch('app/js/**/*.js', browserSync.reload); 
 });
 

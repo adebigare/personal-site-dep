@@ -1,4 +1,3 @@
-/*************** Imports ******/
 /*! bulma.io v0.5.3 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {
@@ -6157,32 +6156,73 @@ label.panel-block {
   src: url("fonts/PlutoExtraLight.eot?") format("eot"), url("fonts/PlutoExtraLight.woff2") format("woff2"), url("fonts/PlutoExtraLight.woff") format("woff"), url("fonts/PlutoExtraLight.ttf") format("truetype"), url("fonts/PlutoExtraLight.svg#Pluto") format("svg"); }
 
 /*************** Variables ******/
-/*************** Styles ******/
 body {
+  color: #343456;
   font: 100% "Lora", Palantino, Georgia, serif;
-  line-height: 1.5rem;
-  color: #343456; }
+  line-height: 1.5rem; }
 
 p {
   padding-top: 1rem; }
 
-a:not(.navbar-item) {
+a:not(.navbar-item):not(.logo):not(.button) {
   border-bottom: 3px solid rgba(0, 209, 178, 0.1); }
-  a:not(.navbar-item):hover {
+  a:not(.navbar-item):not(.logo):not(.button):hover {
     color: white;
-    background-color: #00d1b2;
-    border-bottom: 3px solid rgba(255, 255, 255, 0.5); }
+    border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+    background-color: #00d1b2; }
+
+nav {
+  font-family: "Lora", Palantino, Georgia, serif;
+  padding: 0.75rem;
+  margin-bottom: 0; }
+  nav .hidden {
+    display: none; }
+  nav .nav-burger-custom {
+    float: right; }
+  @media screen and (min-width: 769px) {
+    nav .hidden {
+      display: flex; } }
+
+.button {
+  background: #343456;
+  color: white;
+  font-family: "Pluto", "Economica", "Arial Black", "Franklin Gothic Medium", Arial, sans-serif;
+  text-transform: uppercase; }
+  .button:hover {
+    background-color: white;
+    color: #343456; }
+
+.nav-burger-custom {
+  background-color: white;
+  color: #343456; }
+  .nav-burger-custom:hover {
+    background-color: #343456;
+    color: white; }
+  .nav-burger-custom:active {
+    background-color: white;
+    color: #343456; }
+
+.logo {
+  display: inline-flex;
+  max-width: 70%; }
+
+.level img {
+  margin: auto; }
+
+.level:not(:last-child) {
+  margin-bottom: 0; }
 
 .hero.is-primary {
-  background-color: #343456; }
+  background-color: #343456;
+  border-bottom: 3px solid rgba(0, 209, 178, 0.1); }
 
 .hero a:not(.button) {
-  border-bottom: 3px solid rgba(255, 255, 255, 0.5);
-  background-color: #00d1b2; }
-  .hero a:not(.button):hover {
-    background-color: #343456; }
+  background-color: #00d1b2;
+  color: white; }
 
-.title, .subtitle {
+.title,
+.subtitle {
+  color: #343456;
   font-family: "Economica", "Arial Black", "Franklin Gothic Medium", Arial, sans-serif;
   letter-spacing: 1px; }
 
@@ -6193,7 +6233,7 @@ a:not(.navbar-item) {
   margin-bottom: 1rem; }
 
 .case-study .subtitle {
-  font-size: 2.5rem;
-  display: inline;
   background-color: #00d1b2;
-  color: white; }
+  color: white;
+  display: inline;
+  font-size: 2.5rem; }

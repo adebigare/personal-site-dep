@@ -1,15 +1,16 @@
 
-/*************** Imports ******/
+//************** Imports ******/
 // @charset "utf-8"
-@import "../bulma/bulma.sass";
-@import "_mixins.scss";
+@import '../bulma/bulma';
+@import '_mixins';
 
 /*************** Includes ******/
 @include font-face(Pluto, fonts/PlutoExtraLight);
 
 /*************** Variables ******/
-$family-primary: "Lora", Palantino, Georgia, serif;
-$family-secondary: "Economica", "Arial Black", "Franklin Gothic Medium", Arial, sans-serif;
+$family-primary: 'Lora', Palantino, Georgia, serif;
+$family-secondary: 'Economica', 'Arial Black', 'Franklin Gothic Medium', Arial, sans-serif;
+$family-logo: 'Pluto', $family-secondary;
 $purple: #343456;
 $yellow: #F7F992;
 
@@ -22,71 +23,154 @@ $primary-invert: findColorInvert($purple);
 $secondary: $blue-dark;
 $secondary-invert: $blue-dark-invert;
 
-$colors: ("white": ($white, $black), "black": ($black, $white), "light": ($light, $light-invert), "dark": ($dark, $dark-invert), "primary": ($primary, $primary-invert), "info": ($info, $info-invert), "success": ($success, $success-invert), "warning": ($warning, $warning-invert), "danger": ($danger, $danger-invert), "secondary": ($secondary, $secondary-invert)) !default
+$colors: ('white': ($white, $black), 'black': ($black, $white), 'light': ($light, $light-invert), 'dark': ($dark, $dark-invert), 'primary': ($primary, $primary-invert), 'info': ($info, $info-invert), 'success': ($success, $success-invert), 'warning': ($warning, $warning-invert), 'danger': ($danger, $danger-invert), 'secondary': ($secondary, $secondary-invert)) !default
 
 
-$size-1: 3.4rem !default
-$size-2: 2.4rem !default
-$size-3: 2rem !default
-$size-4: 1.8rem !default
-$size-5: 1.4rem !default
-$size-6: 1rem !default
-$size-7: 0.8rem !default
+	$size-1: 3.4rem !default
+	$size-2: 2.4rem !default
+	$size-3: 2rem !default
+	$size-4: 1.8rem !default
+	$size-5: 1.4rem !default
+	$size-6: 1rem !default
+	$size-7: .8rem !default;
 
-/*************** Styles ******/
+//*************** Styles ******/
 
 body {
-  font: 100% $family-primary;
-  line-height: $size-4;
-  color: $primary;
+	color: $primary;
+	font: 100% $family-primary;
+	line-height: $size-4;
 }
 
 p {
 	padding-top: $size-6;
 }
 
-a:not(.navbar-item){
-	border-bottom: 3px solid rgba($turquoise, 0.1);
+a {
+	&:not(.navbar-item) {
+		&:not(.logo) {
+			&:not(.button) {
 
-	&:hover {
-		color: $white;
-		background-color: $turquoise;
-		border-bottom: 3px solid rgba(255, 255, 255, 0.5);
-	}
-}
+				border-bottom: 3px solid rgba($turquoise, .1);
 
-.hero{
-	&.is-primary{
-		background-color: $primary;
-	}
-	
-	a:not(.button){
-		border-bottom: 3px solid rgba(255, 255, 255, 0.5);
-		background-color: $turquoise;
+				&:hover {
 
-		&:hover{
-			background-color: $primary;
+					color: $white;
+					border-bottom: 3px solid rgba(255, 255, 255, .5);
+					background-color: $turquoise;
+				}
+			}
 		}
 	}
 }
 
-.title, .subtitle {
+nav {
+	font-family: $family-primary;
+	padding: $size-7;
+	margin-bottom: 0;
+
+	.hidden {
+		display: none;
+	}
+
+	.nav-burger-custom {
+		float: right;
+	}
+
+	@media screen and (min-width: 769px) {
+		.hidden {
+			display: flex;
+		}
+	}
+}
+
+.button {
+	background: $primary;
+	color: $white;
+	font-family: 'Pluto', $family-secondary;
+	text-transform: uppercase;
+
+	&:hover {
+		background-color: $white;
+		color: $primary;
+	}
+}
+
+.nav-burger-custom {
+	background-color: $white;
+	color: $primary;
+
+	&:hover {
+		background-color: $primary;
+		color: $white;
+	}
+
+	&:active {
+		background-color: $white;
+		color: $primary;
+	}
+}
+
+.logo {
+	display: inline-flex;
+	max-width: 70%;
+}
+
+.level {
+	img {
+		margin: auto;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 0;
+	}
+}
+
+.hero {
+	&.is-primary {
+		background-color: $primary;
+		border-bottom: 3px solid rgba($turquoise, .1);
+		
+	}
+
+	a {
+		&:not(.button) {
+			background-color: $turquoise;
+			color: $white;
+		}
+	}
+}
+
+.title,
+.subtitle {
+	color: $primary;
 	font-family: $family-secondary;
-	letter-spacing: 1px; 
+	letter-spacing: 1px;
 }
 
 .title {
 	font-size: $size-1;
 }
 
-.case-study{
+.case-study {
 	header {
 		margin-bottom: 1rem;
 	}
-	.subtitle{
-		font-size: $size-2;
-		display: inline;
+
+	.subtitle {
 		background-color: $turquoise;
-		color: white; 
+		color: $white;
+		display: inline;
+		font-size: $size-2;
 	}
 }
+
+// .tile {
+// 	.title {
+// 		background-color: $turquoise;
+// 		color: $white;
+// 		display: inline;
+// 		font-size: $size-2;
+// 	}
+// }
+
