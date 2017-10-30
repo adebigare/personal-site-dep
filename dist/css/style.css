@@ -6159,7 +6159,8 @@ label.panel-block {
 body {
   color: #343456;
   font: 100% "Lora", Palantino, Georgia, serif;
-  line-height: 1.5rem; }
+  line-height: 1.5rem;
+  font-variant-ligatures: none; }
 
 p {
   padding-top: 1rem; }
@@ -6237,3 +6238,29 @@ nav {
   color: white;
   display: inline;
   font-size: 2.5rem; }
+
+.tile {
+  flex-wrap: wrap;
+  align-items: flex-start; }
+  .tile .title {
+    background-color: #00d1b2;
+    color: white;
+    display: inline;
+    font-size: 2.5rem; }
+  .tile .image {
+    margin-top: 1em; }
+  .tile.is-ancestor {
+    margin: 0; }
+    @media screen and (max-width: 768px) {
+      .tile.is-ancestor {
+        padding-left: 0px;
+        padding-right: 0px; } }
+  @media screen and (max-width: 768px) {
+    .tile.is-parent {
+      padding-left: 5px;
+      padding-right: 5px; } }
+  .tile.is-child {
+    margin-top: 1rem !important; }
+    @media screen and (min-width: 769px) {
+      .tile.is-child {
+        margin: 1rem !important; } }

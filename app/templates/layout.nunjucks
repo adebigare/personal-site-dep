@@ -10,8 +10,9 @@
         <link rel="manifest" href="site.webmanifest">
         <link rel="apple-touch-icon" href="icon.png">
         <link href="https://fonts.googleapis.com/css?family=Economica|Lora" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
-
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="css/photoswipe.css">
+        <link rel="stylesheet" href="css/default-skin.css">
     </head>
     <body>
         
@@ -19,6 +20,7 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
         {% block content %} {% endblock %}
-        <script rel="text/js" src="js/main.js"></script>
+        
+        <script data-main="js/app" src="js/vendor/require.min.js"></script></script>
     </body>
 </html>

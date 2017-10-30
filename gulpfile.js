@@ -26,6 +26,14 @@ gulp.task('js', function() {
     }))
 });
 
+gulp.task('data', function() {
+  return gulp.src('app/data.json')
+    .pipe(gulp.dest('dist'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+})
+
 gulp.task('nunjucks', function(){
   return gulp.src('app/pages/**/*.+(html|nunjucks)')
     .pipe(data(function() {
@@ -52,10 +60,11 @@ gulp.task('build', ['browserSync','sass', 'nunjucks', 'js'])
 
 // ***************************************
 
-gulp.task('watch', ['browserSync', 'nunjucks', 'sass', 'js'], function (){
+gulp.task('watch', ['browserSync', 'nunjucks', 'sass', 'js', 'data'], function (){
   gulp.watch('app/**/*.+(html|nunjucks)', ['nunjucks']); 
   gulp.watch('app/scss/**/*.scss ', ['sass']); 
   gulp.watch('app/js/**/*.js ', ['js']); 
+  gulp.watch('app/data.json', ['data']); 
   // gulp.watch('app/js/**/*.js', browserSync.reload); 
 });
 

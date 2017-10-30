@@ -40,6 +40,7 @@ body {
 	color: $primary;
 	font: 100% $family-primary;
 	line-height: $size-4;
+	font-variant-ligatures: none;
 }
 
 p {
@@ -130,7 +131,7 @@ nav {
 	&.is-primary {
 		background-color: $primary;
 		border-bottom: 3px solid rgba($turquoise, .1);
-		
+
 	}
 
 	a {
@@ -165,12 +166,42 @@ nav {
 	}
 }
 
-// .tile {
-// 	.title {
-// 		background-color: $turquoise;
-// 		color: $white;
-// 		display: inline;
-// 		font-size: $size-2;
-// 	}
-// }
+// Hacks and Prototypes Tile Styles
 
+.tile {
+	flex-wrap: wrap;
+	align-items: flex-start;
+
+	.title {
+		background-color: $turquoise;
+		color: $white;
+		display: inline;
+		font-size: $size-2;
+	}
+
+	.image {
+		margin-top: 1em;
+	}
+
+	&.is-ancestor {
+		margin: 0;
+		@media screen and (max-width: 768px)  {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+	}
+
+	&.is-parent {
+		@media screen and (max-width: 768px)  {
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+	}
+
+	&.is-child {
+		margin-top: $size-6 !important;
+		@media screen and (min-width: $tablet)  {
+			margin: $size-6 !important;
+		}
+	}
+}
