@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
@@ -21,6 +21,6 @@
         <![endif]-->
         {% block content %} {% endblock %}
         
-        <script data-main="js/app" src="js/vendor/require.min.js"></script></script>
+        <script data-main="app" src="js/vendor/require.min.js"></script></script>
     </body>
 </html>
