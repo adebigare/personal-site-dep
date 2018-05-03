@@ -7,7 +7,8 @@
     "doc": "doc"
   },
   "dependencies": {
-    "bulma": "^0.5.3",
+    "blendid": "^4.3.1",
+    "bulma": "^0.6.0",
     "concat": "^1.0.3",
     "gulp-concat": "^2.6.1",
     "gulp-data": "^1.2.1",

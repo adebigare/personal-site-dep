@@ -1,9 +1,0 @@
-{% for tile in tiles %}
-
-<article class="tile is-child box">
-	<h2 class="title">{{tile.title}} </h2>
-	<figure><img src="{{tile.featured-img}} " alt=""></figure>
-	<p>{{tile.description}} </p>
-</article>
-
-{%endfor%}
