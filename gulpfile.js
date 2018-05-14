@@ -6,46 +6,50 @@ var minifycss = require('gulp-minify-css');
 var concat = require('gulp-concat');
 var nunjucksRender = require('gulp-nunjucks-render');
 var data = require('gulp-data');
+var path = require('path');
+var fs = require('fs');
+
+// TO DO: create config file paths like in Pattern Lab
 
 gulp.task('sass', function() {
-  return gulp.src('app/scss/**/*.scss') // Gets all files ending with .scss in app/scss
+  return gulp.src('src/scss/**/*.scss')
     .pipe(sass())
     .pipe(concat('style.css'))
     // .pipe(minifycss())
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest('dist'))
     .pipe(browserSync.reload({
       stream: true
-    }))
+    }));
 });
 
 gulp.task('js', function() {
-  return gulp.src('app/js/**/*.js') // Gets all files ending with .scss in app/scss
-    .pipe(gulp.dest('dist/js'))
+  return gulp.src('src/js/**/*.js')
+    .pipe(gulp.dest('dist'))
     .pipe(browserSync.reload({
       stream: true
-    }))
+    }));
 });
 
-gulp.task('data', function() {
-  return gulp.src('app/data.json')
-    .pipe(gulp.dest('dist'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-})
+// gulp.task('data', function() {
+//   return gulp.src('src/data.json')
+//     .pipe(gulp.dest('dist'))
+//     .pipe(browserSync.reload({
+//       stream: true
+//     }));
+// });
 
 gulp.task('nunjucks', function(){
-  return gulp.src('app/pages/**/*.+(html|nunjucks)')
+  return gulp.src('./src/html/04-pages/*.+(html|nunjucks)')
     .pipe(data(function() {
-      return require('./app/data.json')
+      return require('./src/data/global.json')
     }))
     .pipe(nunjucksRender({
-        path: ['app/templates']
-      }))
+      path: 'src/html'
+    }))
     .pipe(gulp.dest('dist'))
     .pipe(browserSync.reload({
       stream: true
-    }))
+    }));
 });
 
 gulp.task('browserSync', function() {
@@ -53,19 +57,18 @@ gulp.task('browserSync', function() {
     server: {
       baseDir: 'dist'
     },
-  })
-})
+  });
+});
 
-gulp.task('build', ['browserSync','sass', 'nunjucks', 'js'])
+gulp.task('build', ['browserSync','sass', 'nunjucks', 'js']);
 
 // ***************************************
 
-gulp.task('watch', ['browserSync', 'nunjucks', 'sass', 'js', 'data'], function (){
-  gulp.watch('app/**/*.+(html|nunjucks)', ['nunjucks']); 
-  gulp.watch('app/scss/**/*.scss ', ['sass']); 
-  gulp.watch('app/js/**/*.js ', ['js']); 
-  gulp.watch('app/data.json', ['data']); 
-  // gulp.watch('app/js/**/*.js', browserSync.reload); 
+gulp.task('watch', ['browserSync', 'nunjucks', 'sass', 'js'], function (){
+  gulp.watch('src/**/*.+(html|nunjucks)', ['nunjucks']);
+  gulp.watch('src/scss/**/*.scss ', ['sass']);
+  gulp.watch('src/js/**/*.js ', ['js']);
+  // gulp.watch('src/js/**/*.js', browserSync.reload);
 });
 
 // *******************************************

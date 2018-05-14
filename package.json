@@ -1,7 +1,7 @@
 {
   "name": "personal-site",
   "version": "1.0.0",
-  "description": "my site bitches! ",
+  "description": "my site bitches!",
   "main": "index.html",
   "directories": {
     "doc": "doc"
@@ -16,8 +16,8 @@
     "gulp-nunjucks-render": "^2.2.1",
     "gulp-uglify": "^3.0.0",
     "nunjucks": "^3.0.1",
-    "photoswipe": "^4.1.2",
-    "uglify": "^0.1.5"
+    "uglify": "^0.1.5",
+    "patternlab-node" : "^3.0.0"
   },
   "devDependencies": {
     "browser-sync": "^2.18.13",
