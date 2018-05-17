@@ -1,4 +1,7 @@
 {
+	"buttons": [{
+		"default": "Let's talk!"
+	}],
 	"tiles": [{
 		"title": "Blinky Cube",
 		"img": "img/BlinkyCube.png",
@@ -10,13 +13,13 @@
 		"gallery" : [{
 			"src" : "img/TimeMachine/UXSurvey-TimeMachine_Page_1-1200x776.png",
 			"w": 1200,
-	        "h": 776, 
+	        "h": 776,
 	        "msrc": "img/TimeMachine/UXSurvey-TimeMachine_Page_1-150x150.png",
-	        "title": "Image caption" 
+	        "title": "Image caption"
 			 },{
 			"src" : "img/TimeMachine/UXSurvey-TimeMachine_Page_2-1200x1521.png",
 			"w": 1200,
-	        "h": 1521, 
+	        "h": 1521,
 	        "msrc": "img/TimeMachine/UXSurvey-TimeMachine_Page_2-150x150.png",
 	        "title": "Image caption"
 			 }]
@@ -32,6 +35,20 @@
 		"title": "Boston Globe UGC Dashboard",
 		"img": "img/UGCAdmin.png",
 		"description": "I took over the maintenance of The Globe’s User Generated Content (UGC) system shortly after GlobeLab was dissolved. The system had been built roughly `8 month prior, but had been suffering from a lack of development resources and general user feedback. After releasing our first update in 9 months, I began rethinking the experience of our admins and moderators in mediating our comment and forum platforms. I learned it was incredibly hard to find “trolls”–users who deliberately post inflammatory or offensive content in order to incite tumult, and it was also difficult to keep track of active areas of the site. From the editorial side, writers and producers wanted to know what people were talking about in their articles, and potentially surface interesting commentary. As a result of this user feedback, I prototyped a more intuitive and informative version of our current UGC Admin panel."
-		
+
+	}],
+	"cases": [{
+		"title": "some text",
+		"featuredImage": "path-to-image.png",
+		"contributions": ["product","design","branding"],
+		"shortText": "some more text",
+		"longText": [{
+			"p1": "first paragraph",
+			"p2": "second paragraph"
+		}],
+		"supportImages": [{
+			"img1": "path-to-image.png"
+		}],
+		"supportVideo": "path-to-vid.png"
 	}]
 }

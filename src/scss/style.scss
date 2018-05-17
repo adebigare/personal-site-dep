@@ -74,6 +74,10 @@ nav {
 		display: none;
 	}
 
+	.active {
+		background: $yellow;
+	}
+
 	.nav-burger-custom {
 		float: right;
 	}

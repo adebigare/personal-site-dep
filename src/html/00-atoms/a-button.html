@@ -1,1 +1,8 @@
-<a href="{{buttonLink}}" class="button {{styleModifier}}">{{buttonText}}</a>
+{% macro aButton(buttonLink, styleModifier, buttonText) %}
+		<a href="{{ buttonLink }}" class="button {{styleModifier}}">{{buttonText}}</a>
+{% endmacro %}
+
+{# If used in a certain instance, button link should be {{buttonLink}} and say {{buttonText}} #}
+{# 1 - Import button template
+2 - Assign specific data (preferably from JSON file) to overwrite vars in template
+3 - export button  #}

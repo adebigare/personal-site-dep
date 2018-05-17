@@ -1,0 +1,27 @@
+{% extends "03-templates/layout.html" %}
+
+{% block content %}
+{% import 'macros/nav-macro.html' as nav %}
+{% import '02-organisms/o-gridlist.html' as grid %}
+{{nav.active('playground')}}
+
+<header class="hero is-warning is-bold is-medium">
+  <div class="hero-body has-text-centered">
+	  <h1 class="title">Hacks and Prototypes</h1>
+	  <p class="subtitle">Projects for fun, experimentation, learning or all of the above</p>
+  </div>
+</header>
+
+<main class="section tile is-ancestor">
+
+
+	<section class=" tile is-parent">
+	{{grid.gridlist()}}
+
+  </section>
+
+
+
+</main>
+
+{%endblock%}

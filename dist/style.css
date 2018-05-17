@@ -6176,6 +6176,8 @@ nav {
   margin-bottom: 0; }
   nav .hidden {
     display: none; }
+  nav .active {
+    background: #F7F992; }
   nav .nav-burger-custom {
     float: right; }
   @media screen and (min-width: 769px) {

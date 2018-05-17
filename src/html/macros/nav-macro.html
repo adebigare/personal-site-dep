@@ -1,8 +1,10 @@
+{%from '00-atoms/a-button.html' import aButton with context %}
+
 {% macro active(activePage='home') %}
 	<nav class="navbar level" role="navigation" aria-label="main navigation">
 
 		<a class="logo level-left" href="/">
-			<img src="img/logo.svg" alt="A lockup of my name" width="100%" height="100%">
+			<img src="img/logo.svg" alt="A lockup of my name" width="200px" height="50px">
 		</a>
 
 		<a class="level-right button is-hidden-tablet  nav-burger-custom">MENU
@@ -10,15 +12,17 @@
 
 	    <ul class="nav-menu-custom level has-text-centered hidden">
 		    <li>
-		    	<a class="level-item navbar-item {%if activePage == 'contact' %} active {% endif %}" href="/contact.html">About</a>
+		    	<a class="level-item navbar-item {%if activePage == 'about' %} active {% endif %}" href="/about.html">About</a>
 		    </li>
 			<li>
-				<a class="level-item navbar-item {%if activePage == 'Case-Studies' %} active {% endif %}" href="#">Case Studies</a>
+				<a class="level-item navbar-item {%if activePage == 'cases' %} active {% endif %}" href="/cases.html">Cases</a>
 			</li>
 			<li>
-				<a class="level-item navbar-end navbar-item {%if activePage == 'hacks' %} active {% endif %}" href="/playground.html">Playground</a>
+				<a class="level-item navbar-end navbar-item {%if activePage == 'playground' %} active {% endif %}" href="/playground.html">Playground</a>
 			</li>
-			<li>{%include '00-atoms/a-button.html' %}</li>
+			<li>
+				{{aButton(buttonLink='#', buttonText='Let\'s Chat!')}}
+			</li>
 	    </ul>
 
 	</nav>

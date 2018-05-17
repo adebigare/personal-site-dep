@@ -30,18 +30,10 @@ gulp.task('js', function() {
     }));
 });
 
-// gulp.task('data', function() {
-//   return gulp.src('src/data.json')
-//     .pipe(gulp.dest('dist'))
-//     .pipe(browserSync.reload({
-//       stream: true
-//     }));
-// });
-
 gulp.task('nunjucks', function(){
-  return gulp.src('./src/html/04-pages/*.+(html|nunjucks)')
+  return gulp.src('./src/html/02-organisms/.+(html|nunjucks)')
     .pipe(data(function() {
-      return require('./src/data/global.json')
+      return require('./src/data/global.json');
     }))
     .pipe(nunjucksRender({
       path: 'src/html'
