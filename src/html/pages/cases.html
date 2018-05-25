@@ -1,7 +1,7 @@
-{% extends "03-templates/layout.html" %}
+{% extends "layout.html" %}
 
 {% block content %}
-{% import 'macros/nav-macro.html' as nav with context %}
+{% import './macros/nav-macro.html' as nav with context %}
 {{nav.active('cases')}}
 {% for button in buttons %}{%endfor%}
 

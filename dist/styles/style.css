@@ -6156,7 +6156,7 @@ label.panel-block {
 
 body {
   color: #343456;
-  font: 100% "Lora", "Palantino", Georgia, serif;
+  font: 100% "Pluto", "Palantino", Georgia, serif;
   line-height: 1.5rem;
   font-variant-ligatures: none; }
 
@@ -6171,7 +6171,7 @@ a:not(.navbar-item):not(.logo):not(.button) {
     background-color: #00d1b2; }
 
 nav {
-  font-family: "Lora", "Palantino", Georgia, serif;
+  font-family: "Pluto", "Palantino", Georgia, serif;
   padding: 0.75rem;
   margin-bottom: 0; }
   nav .hidden {
