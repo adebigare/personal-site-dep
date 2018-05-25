@@ -1,0 +1,17 @@
+{%macro gridlist() %}
+	 {%for tile in tiles | slice(2)%}
+	 <article class="tile is-parent">
+	 		
+	 	{%for item in tile %}
+	 	
+	 	    <div class="box tile is-child">
+	 	
+	 			<h3 class="title">{{item.title}} </h3>
+	 		
+	 		</div>
+	 	{%endfor%}
+
+	 </article>
+	 	
+	 {%endfor%}
+{% endmacro %}

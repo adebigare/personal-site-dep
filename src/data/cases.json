@@ -1,0 +1,16 @@
+{
+	"cases": [{
+		"title": "some text",
+		"featuredImage": "path-to-image.png",
+		"contributions": ["product","design","branding"],
+		"shortText": "some more text",
+		"longText": [{
+			"p1": "first paragraph",
+			"p2": "second paragraph"
+		}],
+		"supportImages": [{
+			"img1": "path-to-image.png"
+		}],
+		"supportVideo": "path-to-vid.png"
+	}]
+}

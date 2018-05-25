@@ -50,8 +50,8 @@ gulp.task('js', function() {
 
 gulp.task('nunjucks', function(){
   return gulp.src('./src/html/pages/**/*.+(html|nunjucks)')
-    .pipe(data(function() {
-      return JSON.parse(fs.readFileSync('./src/data/global.json'));
+    .pipe(data(function(file) {
+      return JSON.parse(fs.readFileSync('./src/data/' + path.basename(file.path, '.html') + '.json'));
     }))
     .pipe(nunjucksRender({
       path: 'src/html/templates'
